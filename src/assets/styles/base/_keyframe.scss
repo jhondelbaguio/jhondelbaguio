@@ -1,0 +1,140 @@
+@-webkit-keyframes svgScroll {
+    0%,
+    100% {
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+    }
+    50% {
+        -webkit-transform: scale(1, 0.9);
+        transform: scale(1, 0.9);
+    }
+}
+
+@-moz-keyframes svgScroll {
+    0%,
+    100% {
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+    }
+    50% {
+        -webkit-transform: scale(1, 0.9);
+        transform: scale(1, 0.9);
+    }
+}
+
+@keyframes svgScroll {
+    0%,
+    100% {
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+    }
+    50% {
+        -webkit-transform: scale(1, 0.9);
+        transform: scale(1, 0.9);
+    }
+}
+
+@-webkit-keyframes strokIn {
+    from {
+        stroke-dashoffset: 121;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@-moz-keyframes strokIn {
+    from {
+        stroke-dashoffset: 121;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes strokIn {
+    from {
+        stroke-dashoffset: 121;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@-webkit-keyframes lineIn {
+    from {
+        -webkit-transform: translateY(100px);
+        transform: translateY(100px);
+    }
+    to {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@-moz-keyframes lineIn {
+    from {
+        -webkit-transform: translateY(100px);
+        transform: translateY(100px);
+    }
+    to {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@keyframes lineIn {
+    from {
+        -webkit-transform: translateY(100px);
+        transform: translateY(100px);
+    }
+    to {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@keyframes dot {
+    0%,
+    100% {
+        -webkit-transform-origin: top;
+        transform-origin: top;
+        -webkit-transform: translateY(0) scale(1, 1);
+        transform: translateY(0) scale(1, 1);
+    }
+    8% {
+        -webkit-transform-origin: top;
+        transform-origin: top;
+        -webkit-transform: translateY(0) scale(1, 0.7);
+        transform: translateY(0) scale(1, 0.7);
+    }
+    50% {
+        -webkit-transform-origin: bottom;
+        transform-origin: bottom;
+        -webkit-transform: translateY(21px) scale(1, 1);
+        transform: translateY(21px) scale(1, 1);
+    }
+    60% {
+        -webkit-transform-origin: bottom;
+        transform-origin: bottom;
+        -webkit-transform: translateY(21px) scale(1, 0.7);
+        transform: translateY(21px) scale(1, 0.7);
+    }
+}
+
+@keyframes blinker {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes intro-dash {
+    to {
+        stroke-dashoffset: 0;
+        stroke-width: 2px;
+        stroke-dasharray: 760;
+    }
+}

@@ -1,0 +1,39 @@
+.mb40 {
+    margin-bottom: 40px;
+}
+
+.mt40 {
+    margin-top: 40px;
+}
+
+.text-xs-center {
+    @include respond(size--xs) {
+        text-align: center;
+    }
+}
+
+.c-white {
+    color: #fff;
+}
+
+.section {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    position: relative;
+
+    @include respond(size-xs) {
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+}
+
+.centered-column {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.w-100 {
+    width: 100%;
+}
