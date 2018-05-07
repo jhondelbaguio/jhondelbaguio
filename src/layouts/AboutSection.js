@@ -76,7 +76,7 @@ const AboutSection = () => (
 							mountains.
 						</p>
 
-						{/*	<div className="text-xs-center mb40 mt40">
+						{/*	<div className="text-xs-center mxb40 mt40">
 							<button className="btn btn-primary c-button">
 								Download Resume
 							</button>
