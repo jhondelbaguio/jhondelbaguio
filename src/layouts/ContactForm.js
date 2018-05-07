@@ -8,7 +8,10 @@ import {
 	Label,
 	Input,
 	Button,
+	FormFeedback,
+	Alert,
 } from 'reactstrap'
+import { isEmail } from '../utils/validations'
 
 const encode = data => {
 	return Object.keys(data)
@@ -27,6 +30,7 @@ class PortfolioSection extends React.Component {
 			'form-name': 'contact',
 		},
 		errors: [],
+		success: false,
 	}
 
 	onChange = e =>
@@ -39,7 +43,9 @@ class PortfolioSection extends React.Component {
 		const errors = {}
 		if (!data.name) errors.name = "Can't be blank"
 		if (!data.email) errors.email = "Can't be blank"
+
 		if (!data.message) errors.message = "Can't be blank"
+		if (!isEmail(data.email)) errors.email = 'Not a valid email address'
 
 		return errors
 	}
@@ -57,19 +63,19 @@ class PortfolioSection extends React.Component {
 				},
 				body: encode({ 'Form-name': 'contact', ...this.state.data }),
 			})
-				.then(() => alert('Success!'))
+				.then(() => {
+					this.setState({
+						data: {
+							name: '',
+							email: '',
+							message: '',
+						},
+						errors: [],
+						success: true,
+					})
+				})
 				.catch(error => alert(error))
 		}
-
-		/*fetch('/', {
-			method: 'POST',
-			headers: { 'Content-Type': 'application/x-www-Form-urlencoded' },
-			body: encode({ 'Form-name': 'contact', ...this.state.data }),
-		})
-			.then(() => alert('Success!'))
-			.catch(error => alert(error))
-
-		e.preventDefault();*/
 	}
 	render() {
 		const { data, errors } = this.state
@@ -93,6 +99,12 @@ class PortfolioSection extends React.Component {
 							</p>
 
 							<div>
+								{this.state.success && (
+									<Alert color="success">
+										Your message has been sent!
+									</Alert>
+								)}
+
 								<Form
 									onSubmit={this.submit}
 									name="contact"
@@ -108,8 +120,12 @@ class PortfolioSection extends React.Component {
 											name="name"
 											value={data.name}
 											onChange={this.onChange}
+											invalid={!!errors.name}
 										/>
-										{errors.name && <p>{errors.name}</p>}
+
+										<FormFeedback>
+											{errors.name}
+										</FormFeedback>
 									</FormGroup>
 
 									<FormGroup>
@@ -119,8 +135,12 @@ class PortfolioSection extends React.Component {
 											name="email"
 											value={data.email}
 											onChange={this.onChange}
+											invalid={!!errors.email}
 										/>
-										{errors.email && <p>{errors.email}</p>}
+
+										<FormFeedback>
+											{errors.email}
+										</FormFeedback>
 									</FormGroup>
 
 									<FormGroup>
@@ -130,10 +150,12 @@ class PortfolioSection extends React.Component {
 											name="message"
 											value={data.message}
 											onChange={this.onChange}
+											invalid={!!errors.message}
 										/>
-										{errors.message && (
-											<p>{errors.message}</p>
-										)}
+
+										<FormFeedback>
+											{errors.message}
+										</FormFeedback>
 									</FormGroup>
 
 									<FormGroup>
