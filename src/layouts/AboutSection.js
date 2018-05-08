@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container, Row, Col } from 'reactstrap'
-import profilePhoto from '../assets/images/me.png'
 import profilePhotox from '../assets/images/mex.png'
+import cv from '../assets/pdfs/CV_JHONDELBAGUIO.pdf'
 const timeline = [
 	{
 		title: 'Javascript Developer',
@@ -76,11 +76,15 @@ const AboutSection = () => (
 							mountains.
 						</p>
 
-						{/*	<div className="text-xs-center mxb40 mt40">
-							<button className="btn btn-primary c-button">
-								Download Resume
-							</button>
-						</div>*/}
+						<div className="text-xs-center mxb40 mt40">
+							<a
+								href={cv}
+								target="__blank"
+								className="btn btn-primary c-button"
+							>
+								Download CV
+							</a>
+						</div>
 					</div>
 				</Col>
 				<Col md={6}>
